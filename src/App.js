@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+//import React from 'react'
+import Nav from './Components/Navbar'
+import photo from './images/logo.svg'
+import {Home} from './Components/Home'
+import {a,port} from './Components/asset'
+import './App.css'
+import Carouselle from './Components/Carouselle'
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav/>
+      <Home/>
+      <Carouselle></Carouselle>
+      {`I have a ${a} and im in port ${port}`}
     </div>
+    
   );
 }
 
