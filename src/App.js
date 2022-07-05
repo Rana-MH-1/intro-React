@@ -1,18 +1,30 @@
 //import React from 'react'
 import Nav from './Components/Navbar'
-import photo from './images/logo.svg'
 import {Home} from './Components/Home'
-import {a,port} from './Components/asset'
 import './App.css'
 import Carouselle from './Components/Carouselle'
 function App() {
-  
+  const HandleClick = ()=>{
+    alert('This a props of type function')
+  }
+
+  const a = 15;
+
+  const lists = ['BMW', 'OPEL','CLIO','MERCEDEZ']
+   let age = 25;
   return (
     <div className="App">
       <Nav/>
-      <Home/>
-      <Carouselle></Carouselle>
-      {`I have a ${a} and im in port ${port}`}
+      <Carouselle/>
+      <hr/>
+      <Home title={'Wonder Woman'}
+            Des = 'This is a ws of props '
+            fun = {HandleClick}
+            number={a}
+            Age={age}
+            Lists ={lists}
+            image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAA/1BMVEVPkv/////50qAlJUYwa//2vY5Hjv9QlP9Oj/UnK1H2v48hIkUuaf+nxv/7/f9LkP/m7/96q//zr4xqov+RuP/yzZ3K3P84M0uwy/+XvP9ZmP/Q4f88if+Is/+Br//w9f8jHTkADT8iZP9hnf/D1/+SfXH/1p74y5ozb//8699Ehf84WZ4gEijSs63y0KlAdv/a5/9Ed9ERF0IZHENeU1sAAD4cKFRnlu7SpYZLQ1KfpNPatqVCPFDxu5SIdW38v4nkyq7Rwbe2uM6UqN+jrtaAn+f51Lf4yqaDof+XsP9Lff8AWf9sk/8+aLMtPW8xR3/iv5Z3Z2SwlX7CpYf/58V1C/EOAAAI8klEQVR4nLWba1vaShCAN1yyaEISRBACSoGAFO0BUY+1ipfW0yrFa/v/f8vZTbgkm01mgjgf+jQh7rw7t90kE6KsIEaj5lSqu8W2TQmhdru4W604NctYZSySVLfl5As2MVVVNU0yE9M9JHYh7ySmSARg1JhyU10oFoX9xCBqiRgSANSq7RjlPoh2tbZ+AKti1mHtc4a6WbHWCWDUdomKUz4XleziXIEAMMp7ZkL1LoK5V0YgwAC1wirqPYQCHAwQgLVXX1G9i1Dfg2IhHqCRp+9Q7yLQfGN1gGHxnepdhOJwRQAjv6rzBQIzHxOM0QBWsb4O9VzqxehIiAQoY8sORkzVSQjAzL8+9S5ClBvkAMb2WrzvF3VbTiAFMNYR/SGCopRABmC1P0A/I2jLQlECYH3E/F0CWTKEAazimuNvKaaEIARgfIz9PVHboTgQAT4k/nwEoUgUAD4g/wQCMRsFgApWP+WSy9G5zE+5/4slqMQBlHHxR6l99HjwtJFOpzeeng8eH49y1LZJjp3cOIIIzHI0gIWaPyW5g/Thp0/pmXxicugK/98BCKBaUQAGJgEpPXpOL5SH5NMzOIIZCEQ/QB6x/lI2+2j1KABSz8sBhvD8KX3ciFPPAA5gAGIOZQAN2AE093QYq54BPEIxwAGKDQlAHoxAegRMnwuYBVzUfBjAAv8KpR8HQIgVAtiFDGAfwdq5PNoIBHVXBKhBGUCPENPncvhMEAT1WhDAKAAGoDmkfp6JOZhALRgBAKgGs/hHA+AI5hXZAzD2IAM84vW71QgkUPcMH0ANMgAyAJcE4KpIzJoPAEoB+pzEAGlUPZolAkHVgFwy9VwQ9cBaAEDbEHqQ0ADMBE9gGHhbExcAWgTs5AbAOMGcA0BFiB5BS5BMNkATuMWIA1TXmoN4E6hVD8BoQ0mYPAS4PNkAgMnvEghcBFgSYnVq/oND0Ae8FBDERiD3hAW4HPkOED7IcwDEOrSBU3988vI6WhoB3iDzFYkoFuQqNMDorZvq+AiewUS0LQbggCGABDg+SaVS3T/p4/mJpxwEYDoMAAwBJICmvaS4vJzMA2EDBGBBQJTCmizQfEt5Uno91mYAYBoUFGJAITAD0OLVp0evqYW8eQQwALENgtgNuwCXx7H6mz79zA1uICAAmHqwDLkA2uXL+ShavdbspAJSOtFQAGaNOPD9CAfYKS1cG5bj9FtKkNKOhgFQHQI/kpgBMNfuSI2gjU5eRP1ogAqBlkIfQKrUOW0KoaAdN9N/SiH9aIAqgfbDfgA27ttJujnSNO4M9u+omT5h5U8iWIA9grknXgLwCH97Pd9h2tM7O+evb2HjJwIwi6QIXSMC8NFf/nB5KaWks08AQNoErEMcYHR6LPFznJSOT0cYABtxI0lz/3a+bibTn0ptfu38iwBA3cyffc1mAwAlqTmCZzez2a9nmNFhsb9kAwClzvllJ4RQ6lye+88ygOwX2L8IG5jfroMAnaYWKr3hsxzg+hucYnAQ0osgQJfvebRLwQSlS3521A0CXMDLISINx9kgAK9C2rkIcM7PakGA7BgcvA0XIioCXDW1tMwFbE28EgHAHUkRLsWiC1Klq+bpVTgIr06bV0IQwi5gpRhcjEJBmOoyEfWHzuKCkC1G8HJsf7kW6gBGGMA1nIZsOYY3JObZxfV1coDr64szMAvZhgTekhGTfLtIDnBxRxBD1xCbUn6dSv9Jpv8faqLevliIbbkrdlIA5LAG4sbElXZCgBsUAL8xQTymd1FvPgLAvTVDvim7lW5+eLmTne/eogY1y5jbc+/S71KA/c3NfSnAd9S03Ntz8AGFB/AjcvsnBfiBAfAeUCCDgCYDQG21vEc08EMq72J5EETov0VNavaQCnxM510s+GC85T/aGq/ggfljOvBBpSf0RgAYRxwwucF5oIp8VDvjvQuYYH9rqXS8tRXIhe4dyquLR7Xgw2pP7BuRYIvn4P7mlqgfV4WWD6uRXQPmf0KosYl7MhZ++A8X1hX8C4sZwZ2QCPtZxjDOCqUI6QD/Cwv4reWMIJyK+6FC2L3F6fe/skGWAmLSG7AYdG8ocjD/Syvwtd2CACpH3Vuk/uBrO+ySSMycfFFa6P+ew44UeHGJXJH436l3pUiEbukO24UovrpFFiP3T8+i3NC9PUN3IYkvr9GJwEqyWT/7K9P/t1A3cc0Dstf32FpA1P6gta0of4X02/+rKNutQR85DRpuYMBsCyipT3q6rjuK8jnL9kIziH22L8p+VhQno+u9SR3x2EXWwoFoYqHqIKNnMpnekAMIwgCGPfajnhmo4C2ptIkFbONRJzpXn9EHDTlAY+D9rk8AY8rbeOIbmSjt99zh5wCbQf2bSwB2Ra8f9/o+qpEprpWLzqefmblAGQcBxsrMBZm5ESIJolu5opvZqNpbqGde5l3Kv4IAvxQ3CJcX9SIJopvZIisy7S+nz4SnoRgEzAMsDX0X6XpfThDXzhexNWH6M37RJ/zSn379P/mZiXCZlCC+oVHa0inqZyZwO8V/BR2gOC3hMhkB1NIpaWql/Ywo+kAJ2MCdvzIQOTOZEAHY1Bpu6w3Pn5vg3r3280+WC+Ofn92De9EAEhsg2npDjc2mRD8jeBBGMh4k+hlBcCxMY7PQ2m1KDOuOfB/4dKRxH3HZIGB/VGt3oLmdTuQDZ/TWxPfNQnnSirpusnACurndH4l1+bAzhAeHmaHhPESq51JfzB/d3u/LxggHzBFmEnvRICL/YgHmn3jIMkAYH76i78ZSsk88mDhse0l74PCw6D26wkcuipsMsAFQBH1p+IMAzA09aW4nlVZvtQ+dmJT7sfGFm3+rX47TAXzs9pB5pxFamYd3fOzGZDj9/Q4j6L+nsV+6IQCYH6bxiR6tvdWaxlofCaAYzlRfwREtfeqs5ZNPDyFpLCDVJ/jsd7v1G+sJnV26Dfk+KQAT537A6j6svTW4j6x77wLgrniY9pgG+QKg81960wec6VcCYNIYMoiBuw6yu9TZrZjuHQ+Y8mF81r8fwBXDcirV+2l/MmD3Qr3BpD8tVCvJP7x35X9T6gHOcvpqJgAAAABJRU5ErkJggg=="
+        ></Home>
     </div>
     
   );
