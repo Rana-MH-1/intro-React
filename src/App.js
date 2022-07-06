@@ -5,26 +5,33 @@ import './App.css'
 import Carouselle from './Components/Carouselle'
 function App() {
   const HandleClick = ()=>{
-    alert('This a props of type function')
+    alert('this is a props of type function')
   }
 
-  const a = 15;
-
-  const lists = ['BMW', 'OPEL','CLIO','MERCEDEZ']
-   let age = 25;
+  const tab = ['BMW', 'FERRARI','PORSHE','AUDI','MERCEDEZ']
+  
+  const imgUrls ={
+    url1:'https://img.freepik.com/vecteurs-libre/suivez-moi-conception-themes-sociaux-commerciaux_24877-50426.jpg?size=338&ext=jpg&ga=GA1.2.678311658.1657016926',
+    url2:'https://img.freepik.com/vecteurs-libre/illustration-caractere-personnes-detenant-icones-compte-utilisateur_53876-43022.jpg?size=626&ext=jpg&ga=GA1.2.678311658.1657016926',
+    url3:'https://img.freepik.com/vecteurs-libre/illustration-du-concept-flux-utilisateur_114360-1658.jpg?size=338&ext=jpg&ga=GA1.2.678311658.1657016926'
+  }
   return (
     <div className="App">
       <Nav/>
-      <Carouselle/>
+      <Carouselle img1={imgUrls}/>
       <hr/>
-      <Home title={'Wonder Woman'}
-            Des = 'This is a ws of props '
-            fun = {HandleClick}
-            number={a}
-            Age={age}
-            Lists ={lists}
-            image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAA/1BMVEVPkv/////50qAlJUYwa//2vY5Hjv9QlP9Oj/UnK1H2v48hIkUuaf+nxv/7/f9LkP/m7/96q//zr4xqov+RuP/yzZ3K3P84M0uwy/+XvP9ZmP/Q4f88if+Is/+Br//w9f8jHTkADT8iZP9hnf/D1/+SfXH/1p74y5ozb//8699Ehf84WZ4gEijSs63y0KlAdv/a5/9Ed9ERF0IZHENeU1sAAD4cKFRnlu7SpYZLQ1KfpNPatqVCPFDxu5SIdW38v4nkyq7Rwbe2uM6UqN+jrtaAn+f51Lf4yqaDof+XsP9Lff8AWf9sk/8+aLMtPW8xR3/iv5Z3Z2SwlX7CpYf/58V1C/EOAAAI8klEQVR4nLWba1vaShCAN1yyaEISRBACSoGAFO0BUY+1ipfW0yrFa/v/f8vZTbgkm01mgjgf+jQh7rw7t90kE6KsIEaj5lSqu8W2TQmhdru4W604NctYZSySVLfl5As2MVVVNU0yE9M9JHYh7ySmSARg1JhyU10oFoX9xCBqiRgSANSq7RjlPoh2tbZ+AKti1mHtc4a6WbHWCWDUdomKUz4XleziXIEAMMp7ZkL1LoK5V0YgwAC1wirqPYQCHAwQgLVXX1G9i1Dfg2IhHqCRp+9Q7yLQfGN1gGHxnepdhOJwRQAjv6rzBQIzHxOM0QBWsb4O9VzqxehIiAQoY8sORkzVSQjAzL8+9S5ClBvkAMb2WrzvF3VbTiAFMNYR/SGCopRABmC1P0A/I2jLQlECYH3E/F0CWTKEAazimuNvKaaEIARgfIz9PVHboTgQAT4k/nwEoUgUAD4g/wQCMRsFgApWP+WSy9G5zE+5/4slqMQBlHHxR6l99HjwtJFOpzeeng8eH49y1LZJjp3cOIIIzHI0gIWaPyW5g/Thp0/pmXxicugK/98BCKBaUQAGJgEpPXpOL5SH5NMzOIIZCEQ/QB6x/lI2+2j1KABSz8sBhvD8KX3ciFPPAA5gAGIOZQAN2AE093QYq54BPEIxwAGKDQlAHoxAegRMnwuYBVzUfBjAAv8KpR8HQIgVAtiFDGAfwdq5PNoIBHVXBKhBGUCPENPncvhMEAT1WhDAKAAGoDmkfp6JOZhALRgBAKgGs/hHA+AI5hXZAzD2IAM84vW71QgkUPcMH0ANMgAyAJcE4KpIzJoPAEoB+pzEAGlUPZolAkHVgFwy9VwQ9cBaAEDbEHqQ0ADMBE9gGHhbExcAWgTs5AbAOMGcA0BFiB5BS5BMNkATuMWIA1TXmoN4E6hVD8BoQ0mYPAS4PNkAgMnvEghcBFgSYnVq/oND0Ae8FBDERiD3hAW4HPkOED7IcwDEOrSBU3988vI6WhoB3iDzFYkoFuQqNMDorZvq+AiewUS0LQbggCGABDg+SaVS3T/p4/mJpxwEYDoMAAwBJICmvaS4vJzMA2EDBGBBQJTCmizQfEt5Uno91mYAYBoUFGJAITAD0OLVp0evqYW8eQQwALENgtgNuwCXx7H6mz79zA1uICAAmHqwDLkA2uXL+ShavdbspAJSOtFQAGaNOPD9CAfYKS1cG5bj9FtKkNKOhgFQHQI/kpgBMNfuSI2gjU5eRP1ogAqBlkIfQKrUOW0KoaAdN9N/SiH9aIAqgfbDfgA27ttJujnSNO4M9u+omT5h5U8iWIA9grknXgLwCH97Pd9h2tM7O+evb2HjJwIwi6QIXSMC8NFf/nB5KaWks08AQNoErEMcYHR6LPFznJSOT0cYABtxI0lz/3a+bibTn0ptfu38iwBA3cyffc1mAwAlqTmCZzez2a9nmNFhsb9kAwClzvllJ4RQ6lye+88ygOwX2L8IG5jfroMAnaYWKr3hsxzg+hucYnAQ0osgQJfvebRLwQSlS3521A0CXMDLISINx9kgAK9C2rkIcM7PakGA7BgcvA0XIioCXDW1tMwFbE28EgHAHUkRLsWiC1Klq+bpVTgIr06bV0IQwi5gpRhcjEJBmOoyEfWHzuKCkC1G8HJsf7kW6gBGGMA1nIZsOYY3JObZxfV1coDr64szMAvZhgTekhGTfLtIDnBxRxBD1xCbUn6dSv9Jpv8faqLevliIbbkrdlIA5LAG4sbElXZCgBsUAL8xQTymd1FvPgLAvTVDvim7lW5+eLmTne/eogY1y5jbc+/S71KA/c3NfSnAd9S03Ntz8AGFB/AjcvsnBfiBAfAeUCCDgCYDQG21vEc08EMq72J5EETov0VNavaQCnxM510s+GC85T/aGq/ggfljOvBBpSf0RgAYRxwwucF5oIp8VDvjvQuYYH9rqXS8tRXIhe4dyquLR7Xgw2pP7BuRYIvn4P7mlqgfV4WWD6uRXQPmf0KosYl7MhZ++A8X1hX8C4sZwZ2QCPtZxjDOCqUI6QD/Cwv4reWMIJyK+6FC2L3F6fe/skGWAmLSG7AYdG8ocjD/Syvwtd2CACpH3Vuk/uBrO+ySSMycfFFa6P+ew44UeHGJXJH436l3pUiEbukO24UovrpFFiP3T8+i3NC9PUN3IYkvr9GJwEqyWT/7K9P/t1A3cc0Dstf32FpA1P6gta0of4X02/+rKNutQR85DRpuYMBsCyipT3q6rjuK8jnL9kIziH22L8p+VhQno+u9SR3x2EXWwoFoYqHqIKNnMpnekAMIwgCGPfajnhmo4C2ptIkFbONRJzpXn9EHDTlAY+D9rk8AY8rbeOIbmSjt99zh5wCbQf2bSwB2Ra8f9/o+qpEprpWLzqefmblAGQcBxsrMBZm5ESIJolu5opvZqNpbqGde5l3Kv4IAvxQ3CJcX9SIJopvZIisy7S+nz4SnoRgEzAMsDX0X6XpfThDXzhexNWH6M37RJ/zSn379P/mZiXCZlCC+oVHa0inqZyZwO8V/BR2gOC3hMhkB1NIpaWql/Ywo+kAJ2MCdvzIQOTOZEAHY1Bpu6w3Pn5vg3r3280+WC+Ofn92De9EAEhsg2npDjc2mRD8jeBBGMh4k+hlBcCxMY7PQ2m1KDOuOfB/4dKRxH3HZIGB/VGt3oLmdTuQDZ/TWxPfNQnnSirpusnACurndH4l1+bAzhAeHmaHhPESq51JfzB/d3u/LxggHzBFmEnvRICL/YgHmn3jIMkAYH76i78ZSsk88mDhse0l74PCw6D26wkcuipsMsAFQBH1p+IMAzA09aW4nlVZvtQ+dmJT7sfGFm3+rX47TAXzs9pB5pxFamYd3fOzGZDj9/Q4j6L+nsV+6IQCYH6bxiR6tvdWaxlofCaAYzlRfwREtfeqs5ZNPDyFpLCDVJ/jsd7v1G+sJnV26Dfk+KQAT537A6j6svTW4j6x77wLgrniY9pgG+QKg81960wec6VcCYNIYMoiBuw6yu9TZrZjuHQ+Y8mF81r8fwBXDcirV+2l/MmD3Qr3BpD8tVCvJP7x35X9T6gHOcvpqJgAAAABJRU5ErkJggg=="
-        ></Home>
+      <Home 
+           
+            number={6}
+            fun={HandleClick}
+            array ={tab}
+            image = 'data:image/png;base64,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'
+      >
+        <div>
+          <h2>This is a child props</h2>
+          <h3>Hello it's a child props also</h3>
+        </div>
+      </Home>
     </div>
     
   );
